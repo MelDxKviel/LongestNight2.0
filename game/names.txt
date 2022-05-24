@@ -1,0 +1,75 @@
+Geroy:
+12() -- geroy hands_folded_smile
+geroy_2 -- geroy angry
+geroy_3 -- geroy angry2
+geroy_or2 -- geroy shout
+uu() -- geroy hands_folded
+гг 34 1() -- geroy side
+гг где -- geroy side_suprised
+гг ог хм() -- geroy angry3
+гг стоит() -- geroy standing
+ггр() -- geroy
+куп ты деб() -- geroy facepalm
+напряг гг() -- geroy tensing
+орет -- geroy shout2
+спс -- geroy thx
+уб -- geroy yep
+убью -- geroy bruh
+удивлгг -- geroy suprised
+
+Coop:
+coop1 -- coop hoh_looks
+coop2 -- coop smile
+coop3 -- coop sad
+coop4 -- coop cyclop
+coop5 -- coop winks
+coop6 -- coop straight_winks
+coop7 -- coop 
+куп др лыба2х() -- coop straight_smile
+куп др() -- coop straight
+куп за голову лыба() -- coop hoh_smile
+куп за голову() -- coop hoh
+куп руки() -- coop handsup
+купер хочет есть() -- coop hungry
+куплевее() -- coop watches
+
+Viki:
+2вина -- viki guilty2
+viki_1 -- viki left
+viki_2 -- viki om
+viki_3 -- viki om2
+viki() -- viki 
+vikigeroy1 -- viki wgeroy1
+vikigeroy2 -- viki wgeroy2
+vikigeroy3 -- viki wgeroy3
+vikigeroy4 -- viki wgeroy4
+ви23 -- viki pensive2
+вики() -- viki pensive
+викилыба() -- viki smile
+вина -- viki guilty
+
+Leo:
+3vileo -- leo wviki3
+leo_1 -- leo
+leoviki -- leo wviki
+leoviki1 -- leo wviki1
+leoviki2 -- leo wviki2
+leoviki4 -- leo wviki4
+leoviki5 -- leo wviki5
+leoviki6 -- leo wviki6
+leoviki7 -- leo wviki7
+leoviki8 -- leo wviki8
+leoviki9 -- leo wviki9
+leoviki10 -- leo wviki10
+лео боком 2() -- leo side
+лео недоумевает() -- leo wondering
+лео() -- leo phone
+
+Stranger:
+нелов -- stranger akward
+свм1 -- stranger drive1
+свм2 -- stranger drive2
+свм3 -- stranger drive3
+стоит подозр -- stranger suspect
+стоит улыб -- stranger smile
+стоит -- stranger
