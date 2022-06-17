@@ -1,7 +1,7 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 # Определение персонажей игры.
-define g = Character("[player_name]", image = 'geroy', color="#000000")
+define g = Character("Роуз", image = 'geroy', color="#000000")
 define l = Character("Лео", image = 'leo', color="#000000")
 define c = Character("Купер", image = 'coop', color="#000000")
 define v = Character("Вики", image = 'viki', color="#000000")
@@ -16,21 +16,8 @@ define audio.main = "audio/main.mp3"
 define audio.mystic = "audio/mystic.mp3"
 
 # Начало игры
+# Сцена 1
 label start:
-
-    scene start
-
-    python:
-        player_name = renpy.input("Как тебя зовут?")
-        player_name = player_name.strip()
-
-        if not player_name:
-            player_name = "Роуз"
-        
-    jump scene1
-
-#Сцена 1
-label scene1:
 
     show furgon leoviki with fade
     show geroy oghm
@@ -103,53 +90,24 @@ label scene1:
 
     g "Кстати, Куп, как, говоришь, фестиваль называется?"
 
-
+    window hide
+    
+    
     show main_menu
+    pause
 
-    c "”Длиннейшая ночь”!"
-
-    # scene furgon leoviki
-
-    # show geroy
-
-    # menu:
-    #     "Задать вопрос":
-    #         $ question = True
-
-
-    #     "Промолчать":
-    #         $ question = False
-
-    # if question == True:
-    #     $ question = False
-    #     show geroy bok
-
-    #     g "А как затмение связано с ночью?"
-
-    #     l "Так совпало, что луна заслонит солнце на восходе и это продлиться почти час."
-
-    #     g "У вас этот час уже распланирован?"
-
-    #     v "Не будь такой злюкой! Ты тоже едешь на фестиваль. Встряхнись! Будет здорово!"
-
-    #     scene coop
-
-    #     c "В точку!"
-
-    # show coop2
-
+    
     show black_scene with dissolve
-
     c "И-и-и-и-и-и-и-и-и-и-и… {w}Мы прибыли!"
 
     stop sound fadeout 1.0
     stop music fadeout 2.0
     jump scene2
 
-#Сцена 2
+# Сцена 2
 label scene2:
     play music "<loop 0>audio/music/like_a_coffe.mp3" volume 0.4
-    scene scene2 with fade
+    scene parking with fade
 
     show coop sc2:
         xalign 0.45
@@ -233,7 +191,7 @@ label scene2:
     
     jump scene3
 
-#Сцена 3
+# Сцена 3
 label scene3:
 
     scene scene3 with fade
@@ -253,13 +211,13 @@ label scene3:
 
     scene scene3_2 with fade
 
-    show coop sc3:
+    show coop sc3 with dissolve:
         xalign 0.45
 
-    show geroy hands_folded_smile:
+    show geroy hands_folded_smile with dissolve:
         xalign 0.15
 
-    show leo wviki8:
+    show leo wviki8 with dissolve:
         xalign 0.9
 
     play sound "audio/park-s-ljudmi-i-vorobjami.mp3" volume 0.5
@@ -298,12 +256,14 @@ label scene3:
 
     play sound "audio/park-s-ljudmi-i-vorobjami.mp3" volume 0.5
 
-    show geroy surprised:
+    show geroy surprised with dissolve:
         xalign 0.9
-    show coop smile:
+    show coop smile with dissolve:
         xalign 0.55
-    show leo wviki9:
-        xalign 0.1
+    show leo wviki9 with dissolve:
+        xalign 0.1    
+    
+    
 
     "Прошло 3 часа. Компания проводит время в ряду павильонов. "
 
@@ -347,14 +307,15 @@ label scene3:
     stop sound fadeout 10.0
     jump scene4
 
-#Сцена 4
+# Сцена 4
 label scene4:
-    scene scene2 with fade
+    scene parking stranger with fade
 
-    show coop smile:
-        xalign 0.05
-    show geroy hands_folded:
+    show geroy hands_folded with dissolve:
         xalign 0.55
+    show coop smile with dissolve:
+        xalign 0.05
+    
 
     c smile "Ладно, я спать."
     c hoh_smile "Ты, конечно, можешь лечь со мной, но брату сама объяснять будешь"
@@ -454,10 +415,10 @@ label scene4:
     
     jump scene5
 
-#Сцена 5
+# Сцена 5
 label scene5:
-    play music "<loop 0>audio/music/guitar_cheerful.mp3" volume 0.3
-
+    play music "<loop 0>audio/music/guitar_cheerful.mp3" volume 0.5
+    play sound "audio/park-s-ljudmi-i-vorobjami.mp3" volume 0.5
     scene scene3_3 with fade
     show geroy side_surprised with dissolve:
         xalign 0.20
@@ -480,7 +441,7 @@ label scene5:
         g side_surprised "Может стоит поспрашивать у людей…"
         g "..."
 
-        show people with dissolve:
+        show levi with dissolve:
             xalign 1.0
         show geroy with move:
             xalign 0.1
@@ -488,20 +449,22 @@ label scene5:
 
         p "Не помню"
         p "Не, я не видел"
+        show levi handup
         p 2 "Кажется, я видел, как похожий парень шел к смотровой площадке"
-        show people
         g thx "Спасибо!"
         
         $question = False
 
-    scene scene3_2 with fade
+    scene sed rhit with fade
 
-    show geroy angry3
+    show geroy angry3 with dissolve
 
     g  "Итак, где же они…"
     g side "*осматривает смотровую площадку*"
     g standing "Не вижу их, может, ушли…"
     g tensing "Стоп, мне показалось или…"
+    show geroy with move:
+        xalign 0.65
     "Роуз находит на краю смотровой площадки 2 лепестка багрового цвета."
     g angry2 "Не видела, чтобы где-то здесь продавали цветы…"
     g tensing "Ну или, чтобы они вообще росли где-то здесь"
@@ -509,7 +472,7 @@ label scene5:
 
     scene scene3_3 with fade
 
-    show geroy yep:
+    show geroy yep with dissolve:
         xalign 0.9
     
 
@@ -578,9 +541,12 @@ label scene5:
         xalign 0.3
     v "Э-э-эй, да ладно тебе!"
 
-    scene scene2 with fade
-    show viki pensive2
-    show geroy angry3
+    stop music
+    scene parking stranger with fade
+    show viki pensive2 with dissolve:
+        xalign 0.2
+    show geroy angry3 with dissolve:
+        xalign 0.55
 
     v "Мы пришли, но здесь никого нет"
 
@@ -590,7 +556,8 @@ label scene5:
 
     g hands_folded "Ты же спал!"
 
-    show coop with dissolve
+    show coop with dissolve:
+        xalign 0.95
     c hoh_looks "Спал, но у ребят сигналка сработала и не выключилась"
 
     p "Привет"
@@ -608,7 +575,6 @@ label scene5:
     show coop
     c "Не думаю, что Лео мог просто потеряться, скорее он что-то задумал"
 
-    show viki
     v "Спасибо, что успокоил, Куп"
 
     g tensing "Но мы его нигде не видели"
@@ -623,6 +589,7 @@ label scene5:
     g angry3 "Может подождем его здесь?"
 
     v om2 "Да, успокойся уже, пожалуйста!"
+    hide viki with dissolve
 
     c hoh_looks "Ты заставила ее понервничать, но не думаю, что она будет держать обиду"
 
@@ -632,24 +599,28 @@ label scene5:
 
     g yep "..."
     g standing "Я хочу поговорить с кое-кем"
+    hide coop with dissolve
+    show geroy with move:
+        xalign 0.35
+    "Роуз уходит к машине разговорчивого соседа по парковке."
     g shout "Эй! Старомодный парень!"
     g bruh "Куда же он запропастился? Ох…"
 
-    "[g] обнаруживает возле машины несколько багровых лепестков на земле."
+    "[g] обнаруживает возле колеса автомобиля одинокий багровый лепесток."
 
-    g angry2 "Снова эти лепестки? У него ведь не было цветов"
+    g angry2 "Снова? У него ведь не было цветов"
     g tensing "Все это не просто так…"
     g angry "Я должна догнать Вики"
 
     jump scene6
 
-#Сцена 6
+# Сцена 6
 label scene6:
-    scene scene3_3
+    scene scene3_3 with fade
     show geroy standing
 
     g "В 5 утра здесь так много людей, что не протолкнуться. Кажется, весь фестиваль собирается в одном месте"
-    g angry3 "Блин, не хватало еще ее потерять"
+    g angry3 "Блин, не хватало еще её потерять"
     g side "Может все они в толпе?"
     g side_surprised "Кажется, я вижу Вики"
     g shout2 "Эй! Вики!"
@@ -659,22 +630,47 @@ label scene6:
     g yep "Куда она, черт возьми, идет? Может она заметила Лео?"
 
     "[g] в спешке покидает людное место и идет по тропе, на которой последний раз видела Вики. Тропа заканчивается у трейлера, припаркованного у лесного ограждения."
+    stop music fadeout 1.0
+    scene scene6 with fade
 
-    scene scene2
+    play music "audio/music/glitch.mp3"
 
-    g "Здесь, на удивление, тихо"
+    show geroy angry3 with dissolve
+    g angry3 "Здесь, на удивление, тихо"
     g "Да и люди все ушли"
-    g "Боже, куда тебя занесло, Вики"
-    g "Хм… Кажется за тем трейлером кто-то есть, я вижу тени. Я должна проверить..."
+    g tensing "Боже, куда тебя занесло, Вики"
+    g "Хм… Кажется за тем трейлером кто-то есть, я вижу тени."
+    show geroy with move:
+        xalign 0.6
     g "..."
+    window hide
+    show nightmare with fade
+    pause
 
-    "Из-за угла трейлера, видится нечто пугающее..."
+    show semifinal with dissolve
+    pause
+    "Из-за дерева возле трейлера видится нечто пугающее:"
+    window hide
+    play sound "audio/fire-fireplace-crackle.mp3"
+
+    show dead_meat with dissolve
+    pause
     "У костра, горящего возле трейлера, лежит бледная девушка, со стеклянным взглядом, на земле видны пятна крови. Над ней нависает фигура в белой маске и держит в правой руке розу кроваво-красного цвета. В лице девушки [g] узнает Вики."
+    hide dead_meat
     "Фигура бросает розу на бездыханное тело, которое после этого бесследно уходит под землю"
-
-    g "Черт, черт, черт…"
-    g "*убегает от трейлера по тропе*"
+    show finfin with dissolve
+    pause
+    stop sound
+    play sound "audio/run.mp3"
     
+    show black_scene with fade
+    g "Черт, черт, черт…"
+    
+    stop music
+    window hide
+    pause
+    show to_be_continued with dissolve
+    pause
     return
 
 
